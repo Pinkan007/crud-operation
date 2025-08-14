@@ -52,7 +52,7 @@ function App() {
 
     if (isEditMode) {
       axios
-        .put(`http://localhost:8080/updateStudent/${editId}`, formData)
+        .put(`https://crud-operation-1-2hm6.onrender.com/updateStudent/${editId}`, formData)
         .then((res) => {
           alert(res.data.message);
           resetForm();
@@ -61,7 +61,7 @@ function App() {
         .catch((err) => console.error(err));
     } else {
       axios
-        .post("http://localhost:8080/createStudent", formData)
+        .post("https://crud-operation-1-2hm6.onrender.com//createStudent", formData)
         .then((res) => {
           alert(res.data);
           resetForm();
@@ -74,7 +74,7 @@ function App() {
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete this student?")) {
       axios
-        .delete(`http://localhost:8080/deleteUser/${id}`)
+        .delete(`https://crud-operation-1-2hm6.onrender.com//deleteUser/${id}`)
         .then((res) => {
           alert(res.data.message);
           fetchStudents();
