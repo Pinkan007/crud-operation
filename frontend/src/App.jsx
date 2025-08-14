@@ -18,7 +18,7 @@ function App() {
 
   const fetchStudents = () => {
     axios
-      .get("https://crud-operation-1-2hm6.onrender.com/fetchStudent")
+      .get("https://crud-operation-6qzf.onrender.com/fetchStudent")
       .then((res) => setStudents(res.data))
       .catch((err) => console.error(err));
   };
@@ -52,7 +52,7 @@ function App() {
 
     if (isEditMode) {
       axios
-        .put(`https://crud-operation-1-2hm6.onrender.com/updateStudent/${editId}`, formData)
+        .put(`https://crud-operation-6qzf.onrender.com/updateStudent/${editId}`, formData)
         .then((res) => {
           alert(res.data.message);
           resetForm();
@@ -61,7 +61,7 @@ function App() {
         .catch((err) => console.error(err));
     } else {
       axios
-        .post("https://crud-operation-1-2hm6.onrender.com/createStudent", formData)
+        .post("https://crud-operation-6qzf.onrender.com/createStudent", formData)
         .then((res) => {
           alert(res.data);
           resetForm();
@@ -74,7 +74,7 @@ function App() {
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete this student?")) {
       axios
-        .delete(`https://crud-operation-1-2hm6.onrender.com/deleteUser/${id}`)
+        .delete(`https://crud-operation-6qzf.onrender.com/deleteUser/${id}`)
         .then((res) => {
           alert(res.data.message);
           fetchStudents();
